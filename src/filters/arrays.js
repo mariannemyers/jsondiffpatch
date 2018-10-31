@@ -37,7 +37,7 @@ function arraysHaveMatchByRef(array1, array2, len1, len2) {
 function matchItems(array1, array2, index1, index2, context) {
   let value1 = array1[index1];
   let value2 = array2[index2];
-  if (value1 === value2) {
+  if (value1 === value2 || JSON.stringify(value1) === JSON.stringify(value2)) {
     return true;
   }
   if (typeof value1 !== 'object' || typeof value2 !== 'object') {
